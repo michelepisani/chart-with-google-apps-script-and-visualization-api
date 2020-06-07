@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  </head>
+  <body>
+    <div id="columnchart_material" style="width: 1000px; height: 500px;"></div>
+    <script>
+        
+        var array_chart = [];
+    
+        function loadChart(arr) {
+          array_chart = arr;
+          google.charts.load('current', {'packages':['bar']});
+          google.charts.setOnLoadCallback(drawChart);
+        }
+  
+        function drawChart() {
+          var data = google.visualization.arrayToDataTable(array_chart);
+          var options = {
+            chart: {
+              title: 'Company Performance',
+              subtitle: 'Sales Current Year',
+            },
+            bars: 'vertical',
+            hAxis: {format: 'decimal'},
+            height: 300,
+            colors: ['#c5deb4', '#548034', '#305696', '#FFD700']
+          };
+  
+          var chart = new google.charts.Bar(document.getElementById('columnchart_material'));
+  
+          chart.draw(data, google.charts.Bar.convertOptions(options));
+        }
+        
+        google.script.run.withSuccessHandler(loadChart).getChartData();
+      </script>
+  </body>
+</html>
