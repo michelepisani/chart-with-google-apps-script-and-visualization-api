@@ -3,7 +3,7 @@ Chart with Google Apps Script and Visualization API
 
 1) Create a bound script in a Google Sheet;
 
-2) Rename the sheet as "Chart in Web App" an add data like following:
+2) Rename the sheet as "Chart in Web App" and add data like following:
 
 ![alt text](<data-in-sheet.png>)
 
